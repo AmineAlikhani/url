@@ -1,0 +1,32 @@
+<!doctype html> 
+<html lang="en"> 
+
+<head>
+    <meta charset="utf-8"> 
+    <title>URL Shortener</title> 
+</head> 
+
+<style> 
+  body { 
+    height: 100vh; 
+    background-color: silver; 
+    font-family: 'Times New Roman'; 
+    align-content: center;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+ } 
+</style> 
+
+<body>   
+<div>
+    <form action = "" method = "POST">
+        {% csrf_token %}
+        <label for="l_url">Your too long url: </label>
+        <input id="l_url" type="text" name="l_url">
+        <input type="submit" value="OK">
+    </form>
+<h4>Short from is: {{s_url}} </h4>
+</div>    
+</body>   
+</html>
