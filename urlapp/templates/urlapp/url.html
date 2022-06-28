@@ -20,13 +20,23 @@
 
 <body>   
 <div>
-    <form action = "" method = "POST">
-        {% csrf_token %}
-        <label for="l_url">Your too long url: </label>
-        <input id="l_url" type="text" name="l_url">
-        <input type="submit" value="OK">
-    </form>
-<h4>Short from is: {{s_url}} </h4>
+<a href="/">Home</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Long url</th>
+                <th>Short url</th>
+            </tr>
+        </thead>
+        {% for i in url %}
+        <tbody>
+            <tr>
+                <td>{{i.url}}</td>
+                <td>{{i.slug}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
 </div>    
 </body>   
 </html>
